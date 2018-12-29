@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <title>
+        signup page
+    </title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+        }
+        
+        .button {
+            background-color: black;
+            border-radius: 10px;
+            color: white;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="text-align: center;color:blueviolet">Signup Form</h2>
+    <form style="text-align:center;color:blueviolet">
+        Username:<input id="uname" type="text"><br><br> Password:
+        <input id="pwd" type="password"><br><br> EmailId:
+        <input id="eid" type="text"><br><br>
+        <input id="bttn" class="button" type="button" value="SignUp" onclick=signup()>
+    </form>
+
+
+    <script>
+        function signup() {
+            var usnme = document.getElementById("uname").value;
+            var pwrd = document.getElementById("pwd").value;
+            var emid = document.getElementById("eid").value;
+            if (usnme.length >= 6 && pwrd.length >= 6) {
+                var user = {
+                    username: usnme,
+                    password: pwrd,
+                    emailid: emid
+                };
+                localStorage.setItem(user.emailid, JSON.stringify(user));
+                alert("now you are registered with e-commerce");
+                window.open("projectlogin.html", "_blank");
+            } else if (usnme.length <= 5) {
+                alert("username should be atleast 6 characters");
+            } else if (pwrd.length <= 5) {
+                alert("password should be minimum 6 charcters");
+            }
+
+        }
+    </script>
+</body>
+
+</html>

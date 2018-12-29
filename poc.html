@@ -1,0 +1,32 @@
+<html>
+
+<head>
+
+</head>
+
+<body id="output">
+    NAME:<input type="text" id="p_name"><br><br> ID:
+    <input type="text" id="p_id"><br><br> PRICE:
+    <input type="text" id="p_price"><br><br> URL:
+    <input type="text" id="p_img" height="100px" width="150px"><br/><br/>
+    <input id="show" type="button" value="Submit" onclick=display()>
+</body>
+<script>
+    function display() {
+        var name = document.getElementById("p_name");
+        var id = document.getElementById("p_id");
+        var price = document.getElementById("p_price");
+        var url = document.getElementById("p_img");
+
+        localStorage.setItem("1010", "name");
+        document.getElementById("output").innerHTML = localStorage.getItem("1010");
+
+        localStorage.setItem("1020", "id");
+        document.getElementById("output").innerHTML = localStorage.getItem("1020");
+
+        localStorage.setItem("1030", "price");
+        localStorage.setItem("1040", "url");
+    }
+</script>
+
+</html>

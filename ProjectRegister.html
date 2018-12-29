@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>E-COMMERCE</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+        }
+        
+        .button {
+            background-color: black;
+            border-radius: 10px;
+            color: white;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>
+        <center>E-COMMERCE</center>
+    </h2>
+    <center>
+        <input class="button" type="button" value="LOGIN" onclick=login()>
+        <input class="button" type="button" value="REGISTER" onclick=signup()>
+    </center>
+</body>
+<script>
+    function login() {
+        window.open("projectlogin.html", "_blank");
+    }
+
+    function signup() {
+        window.open("projectsignup.html", "_blank");
+    }
+</script>
+
+</html>

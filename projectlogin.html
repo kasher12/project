@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <title>Login</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+        }
+        
+        .button {
+            background-color: black;
+            border-radius: 10px;
+            color: white;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body style="color:blueviolet;text-align:center">
+    <h2>Employee Login</h2>
+    <form>
+        <b>
+        EmailId:<input id="eid" type="text"><br><br> Password:
+        <input id="pwd" type="password"><br><br>
+        <input class="button" type="button" value="Login" onclick=login()>
+    </b>
+    </form>
+
+    <script>
+        function login() {
+            var emid = document.getElementById("eid").value;
+            var pswd = document.getElementById("pwd").value;
+            if (emid.length >= 6 && pswd.length >= 6) {
+
+                var a = localStorage.getItem(emid);
+                var db_details = JSON.parse(a);
+                console.log(db_details);
+                console.log(db_details.password);
+                if (db_details.password == pswd) {
+                    alert("test");
+                    window.open("productprojuect.html", "_blank");
+                } else {
+                    alert("password is wrong")
+                }
+            } else if (emid.lenght < 6) {
+                alert("username should be atleast 6 characters")
+            } else if (pswd.length < 6) {
+                alert("password should be atleast 6 characters")
+            }
+
+        }
+    </script>
+</body>
+
+</html>
